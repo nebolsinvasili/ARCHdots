@@ -1,4 +1,4 @@
-sudo pacman -S zsh fzf zoxide man tar unzip --noconfirm
+sudo pacman -S zsh fzf zoxide exa man tar unzip --noconfirm
 
 echo "Доступные shell:"
 cat /etc/shells
@@ -13,10 +13,7 @@ fi
 chsh -s "$NEWSHELL"
 
 sudo stow -S .config/ -t ~/.config/
-
-sudo stow -S configs/zsh-config/.zshrc -t ~/
-sudo stow -S configs/zsh-config/.zprofile -t ~/
-sudo stow -S configs/zsh-config/.zsh_history -t ~/
+sudo stow -S settings/ -t ~/
 
 echo "Shell изменён."
 
