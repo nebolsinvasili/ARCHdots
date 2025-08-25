@@ -1,0 +1,76 @@
+configuration {
+	drun-display-format: "{name}";
+	modi: "drun";
+}
+
+@import "~/.config/i3/themes/i3_one/rofi/colors.rasi"
+
+* {
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+window {
+	border: 3;
+	border-color: @fg;
+	width: 600px;
+	height: 250px;
+	background-color: @bg;
+}
+
+mainbox {
+	children: [inputbar,listview];
+}
+
+listview {
+	columns: 3;
+}
+
+inputbar {
+	children: [textbox];
+}
+
+textbox {
+	expand: false;
+	str: "See you later bro!";
+	text-color: @fg;
+	font: "JetbrainsMono 30";
+	horizontal-align: 0.5;
+	margin: 30 90 -30 90;
+}
+
+
+element {
+	border: 2;
+	border-radius: 10;
+	border-color: @fg;
+	margin: 0 30 20 30;
+}
+
+element-text {
+	padding: 19 0;
+	text-color: inherit;
+	expand: true;
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+	font: "Symbols Nerd Font 40";
+}
+
+element.normal.normal,
+element.alternate.normal,
+element.normal.urgent,
+element.alternate.urgent,
+element.normal.active,
+element.alternate.active {
+	text-color: @fg;
+	border-color: @fg;
+}
+
+element.selected.normal,
+element.selected.urgent,
+element.selected.active {
+	text-color: @fg;
+	border-color: @fg;
+	background-color: #cad3f576;
+}
