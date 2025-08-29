@@ -35,7 +35,7 @@ echo '
                                     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝
 
 
-                                                                     Power by Nebolsin Vasili (v.0.1.0)
+                                                                     Power by Nebolsin Vasili
 
 
                                        <──────────────────────────────────────────────────────────────────────────────>
@@ -915,11 +915,11 @@ echo -n "
 read main_menu
       case "$main_menu" in
 
-         "1" ) kernel='pacstrap -i /mnt base base-devel linux linux-headers linux-firmware dosfstools btrfs-progs intel-ucode amd-ucode iucode-tool archlinux-keyring bluez bluez-utils neovim htop yazi neofetch dhcpcd dhclient networkmanager --noconfirm'
+         "1" ) kernel='pacstrap -i /mnt base base-devel linux linux-headers linux-firmware dosfstools btrfs-progs intel-ucode amd-ucode iucode-tool archlinux-keyring bluez bluez-utils nano vim dhcpcd dhclient os-prober ntfs-3g networkmanager --noconfirm'
          ;;
-         "2" ) kernel='pacstrap -i /mnt base base-devel linux-zen linux-zen-headers linux-firmware dosfstools btrfs-progs intel-ucode amd-ucode iucode-tool archlinux-keyring bluez bluez-utils neovim htop yazi neofetch dhcpcd dhclient networkmanager --noconfirm'
+         "2" ) kernel='pacstrap -i /mnt base base-devel linux-zen linux-zen-headers linux-firmware dosfstools btrfs-progs intel-ucode amd-ucode iucode-tool archlinux-keyring bluez bluez-utils nano vim dhcpcd dhclient os-prober ntfs-3g networkmanager --noconfirm'
          ;;
-         "3" ) kernel='pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware dosfstools btrfs-progs intel-ucode amd-ucode iucode-tool archlinux-keyring bluez bluez-utils neovim htop yazi neofetch dhcpcd dhclient networkmanager --noconfirm'
+         "3" ) kernel='pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware dosfstools btrfs-progs intel-ucode amd-ucode iucode-tool archlinux-keyring bluez bluez-utils nano vim dhcpcd dhclient os-prober ntfs-3g networkmanager --noconfirm'
       esac
 
 clear
@@ -1393,14 +1393,13 @@ sed -i "/\[multilib\]/,/Include/"'s/^#//' /mnt/etc/pacman.conf
 arch-chroot /mnt /bin/bash -c "sed -i s/'# %wheel ALL=(ALL:ALL) ALL'/'%wheel ALL=(ALL:ALL) ALL'/g /etc/sudoers"
 echo "root:$password" | arch-chroot /mnt chpasswd
 arch-chroot /mnt /bin/bash -c "mkinitcpio -P"
-arch-chroot /mnt /bin/bash -c "pacman -Syy grub grub-btrfs os-prober efibootmgr --noconfirm"
+arch-chroot /mnt /bin/bash -c "pacman -Syy grub grub-btrfs efibootmgr --noconfirm"
 arch-chroot /mnt /bin/bash -c "useradd -m -G wheel -s /bin/bash $username"
 echo "$username:$userpassword" | arch-chroot /mnt chpasswd
 arch-chroot /mnt /bin/bash -c "systemctl enable NetworkManager"
 arch-chroot /mnt /bin/bash -c "${Uefi}"
 arch-chroot /mnt /bin/bash -c "${BIOS}"
 arch-chroot /mnt /bin/bash -c "${BBOOT}"
-#arch-chroot /mnt /bin/bash -c "sed -i s/'#GRUB_DISABLE_OS_PROBER=false'/'GRUB_DISABLE_OS_PROBER=false'/g /etc/default/grub"
 arch-chroot /mnt /bin/bash -c "grub-mkconfig -o /boot/grub/grub.cfg"
 #---------------------------------------------------------------------
 ${graphc_drivers}
