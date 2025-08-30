@@ -1,4 +1,4 @@
-sudo pacman -S zsh fzf zoxide exa man tar unzip --noconfirm
+sudo pacman -S zsh fzf zoxide yazi exa man tar unzip --noconfirm
 
 echo "Доступные shell:"
 cat /etc/shells
