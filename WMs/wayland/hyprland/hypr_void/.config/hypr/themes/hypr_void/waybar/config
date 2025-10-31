@@ -1,0 +1,121 @@
+{
+	"height": 28,
+	"width": 1600,
+	"spacing": 10,
+	"margin-top": 5,
+
+    "modules-left": ["custom/menu", "hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["custom/cmus", "pulseaudio"],
+    "modules-right": ["tray", "custom/games", "custom/weather", "cpu", "memory", "hyprland/language", "custom/clock"],
+
+	"custom/menu": {
+		"format": "{icon}",
+		"format-icons": "",
+		"on-click": "wofi --show drun -c ~/.config/hypr/themes/hypr_void/wofi/config -s /home/owl/.config/hypr/themes/hypr_void/wofi/style.css",
+		"escape": true,
+		"tooltip": false
+	},
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"1": "󰝤",
+			"2": "󰝤",
+			"3": "󰝤",
+			"4": "󰝤",
+			"5": "󰝤",
+			"6": "󰝤",
+			"7": "󰝤",
+			},
+		"tooltip": false,
+        "persistent_workspaces": {
+                "*": 6
+            }
+	},
+
+	"hyprland/window": {
+		"format": "{class}",
+		"separate-outputs": false,
+	},
+
+
+	"custom/cava": {
+		"format": "{}",
+		"interval": 1,
+		"exec": "~/.config/hypr/themes/hypr_void/scripts/cava.sh",
+		"tooltip": false
+	},
+	"custom/cmus": {
+		"format": "{icon}  {}",
+		"format-icons": {
+		"default": [""]
+		},
+		"max-length": 45,
+		"interval": 1,
+		"exec": "cmus-remote -C \"format_print '%F'\"",
+		"exec-if": "pgrep cmus",
+		"on-click": "cmus-remote -u",
+		"on-scroll-up": "cmus-remote --next",
+		"on-scroll-down": "cmus-remote --prev",
+		"escape": true,
+		"tooltip": false
+	},
+
+	"custom/games": {
+		"format": "󰊗",
+		"on-click": "--",
+	},
+
+
+
+    "tray": {
+		"icon-size": 10,
+		"spacing": 10
+	},
+
+	"custom/weather": {
+		"format": "{}",
+		"interval": 10,
+		"exec": "~/.config/hypr/themes/hypr_void/scripts/weather.sh",
+		"tooltip": false
+	},
+
+	"pulseaudio": {
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-icons": {
+		"default": ["", "", ""]
+		},
+		"on-click": "pavucontrol",
+		"tooltip": false
+	},
+
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "EN",
+		"format-ru": "RU",
+	},
+
+
+	"cpu": {
+		"format": " {usage}%",
+		"tooltip": false
+	},
+
+	"memory": {
+		"format": " {}%"
+	},
+
+	"custom/clock": {
+		"exec": "date +'%H:%M'",
+		"interval": 1,
+		"tooltip": false,
+		//"on-click": "alacritty -e 'calcurse'"
+	},
+        
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    }
+}
+

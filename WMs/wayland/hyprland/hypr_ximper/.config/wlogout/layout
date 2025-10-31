@@ -1,0 +1,35 @@
+{
+    "label" : "lock",
+    "action" : "gtklock",
+    "text": "Заблокировать"
+}
+
+{
+    "label" : "hibernate",
+    "action" : "systemctl hibernate",
+    "text": "Гибернация"
+}
+
+{
+    "label" : "logout",
+    "action" : "loginctl terminate-user $USER",
+    "text": "Выйти"
+}
+
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text": "Выключение"
+}
+
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+    "text": "Сон"
+}
+
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text": "Перезагрузка"
+}

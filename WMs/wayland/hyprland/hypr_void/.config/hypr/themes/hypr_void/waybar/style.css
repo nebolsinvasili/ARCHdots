@@ -1,0 +1,105 @@
+* {
+	font-family: JetBrainsMono, Symbols Nerd Font;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+@define-color bg #1e2327;
+@define-color fg #d3c6aa;
+@define-color tr rgba(30, 35, 39, 0.0);
+
+@define-color blue #7fbbb3;
+@define-color cyan #83c092;
+@define-color green #a7c080;
+@define-color red #e67e80;
+@define-color white #9da9a0;
+@define-color yellow #dbbc7f;
+
+window#waybar {
+    background-color: @tr;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+
+#custom-menu,
+#window,
+#custom-cava,
+#custom-cmus,
+#custom-games,
+#tray,
+#custom-weather,
+#pulseaudio,
+#language,
+#cpu,
+#memory,
+#custom-clock {
+	background-color: @bg;
+	padding: 0 10px;
+	margin: 0px;
+	border: 1px solid @fg;
+	border-radius: 6;
+}
+
+#custom-menu {
+	color: @green;
+}
+#window {
+	color: @yellow;
+}
+#custom-cava {
+	color: @yellow;
+}
+#custom-cmus {
+	color: @green;
+}
+#custom-games {
+	color: @red;
+}
+#tray {
+	color: @fg;
+}
+#custom-weather {
+	color: @cyan;
+}
+#pulseaudio {
+	color: @yellow;
+}
+#language {
+	color: @green;
+}
+#cpu {
+	color: @blue;
+}
+#memory {
+	color: @green;
+}
+#custom-clock {
+	color: @yellow;
+}
+
+#workspaces {
+	padding: 0px 3px;
+    background-color: @bg;
+	margin-left: 1px;
+	margin-right: 1px;
+	border: 1px solid @fg;
+	border-radius: 6;
+}
+#workspaces button {
+    padding: 0 5px;
+    color: @fg;
+	border-radius: 0;
+}
+#workspaces button:hover {
+    color: @green;
+}
+#workspaces button.active {
+    color: @green;
+}
+#workspaces button.empty {
+    color: @white;
+}
+#workspaces button.urgent {
+    color: @red;
+}

@@ -1,0 +1,163 @@
+{
+	"height": 35,
+	"width": 1840,
+	"spacing": 10,
+	"margin-top": 15,
+	"reload_style_on_change": true,
+	"output": "DVI-D-1", 
+
+	"modules-left": ["custom/menu", "sway/workspaces", "custom/fm",
+		"custom/scren", "custom/rec"],
+	"modules-center": ["custom/cmus", "cpu", "memory"],
+	"modules-right": ["tray", "pulseaudio", "custom/wf", "custom/bt",
+	"sway/language", "clock", "custom/power"],
+
+
+	"custom/menu": {
+		"format": "󰣇",
+		"on-click": "pkill wofi || wofi --show drun -x 40 -y 10 --height 500 --width 400 --hide-scroll",
+		"escape": true,
+		"tooltip": false
+	},
+
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"warp-on-scroll": false,
+		"format": "{name}",
+		"format": "{icon}",
+		"format-icons": {
+			"1": "󰮯",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "󰊠",
+			"6": "󰊠",
+			"7": "󰊠",
+			"urgent": "",
+			"active": "",
+			"default": ""
+		},
+	},
+
+	"custom/fm": {
+		"format": "МЕСТА",
+		"on-click": "~/.config/wofi/file.sh",
+		"escape": true,
+		"tooltip": false
+	},
+
+	"custom/scren": {
+		"format": "󰄀",
+		"on-click": "~/.config/waybar/clipboard.sh",
+		"escape": true,
+		"tooltip": false
+	},
+
+	"custom/rec": {
+		"format": "󰕧",
+		"on-click": "kooha",
+		"escape": true,
+		"tooltip": false
+	},
+
+
+	"custom/cmus": {
+		"format": "<span color='#d79921'></span>  {}",
+		"max-length": 45,
+		"interval": 10,
+		"exec": "cmus-remote -C \"format_print '%F'\"",
+		"exec-if": "pgrep cmus",
+		"on-click": "cmus-remote -u",
+		"on-scroll-up": "cmus-remote --next",
+		"on-scroll-down": "cmus-remote --prev",
+		"escape": true,
+		"tooltip": false
+	},
+
+	"custom/media": {
+	"format": "<span color='#d79921'>{icon}</span> {0}     ",
+		"return-type": "json",
+		"format-icons": {
+			"Playing": "",
+			"Paused": ""
+		},
+		"max-length": 50,
+		"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+		"on-click": "playerctl play-pause",
+		"on-scroll-up": "playerctl next",
+		"on-scroll-down": "playerctl previous",
+		"tooltip": false
+	},
+
+	"cpu": {
+		"format": "<span color='#98971a'>󰻠</span> {usage}%",
+		"tooltip": false
+	},
+	
+	"memory": {
+		"format": "<span color='#98971a'></span> {}%",
+		"tooltip": false
+	},
+
+
+	"tray": {
+		"icon-size": 20,
+		"spacing": 10,
+		"tooltip": false
+	},
+
+	"pulseaudio": {
+		"scroll-step": 5,
+		"format": "<span color='#d79921'>{icon}</span> {volume}%",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+		"on-click": "pkill pavucontrol || pavucontrol",
+		"tooltip": false
+	},
+
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	},
+
+	"custom/wf": {
+		"format": "",
+		//"on-click": "nm-connection-editor",
+		"on-click": "~/.config/wofi/wofi-wifi-menu.sh",
+		"escape": true,
+		"tooltip": false
+	},
+
+	"custom/bt": {
+		"format": "",
+		//"on-click": "nm-connection-editor",
+		"on-click": "~/.config/wofi/wofi-bluetooth",
+		"escape": true,
+		"tooltip": false
+	},
+
+	"sway/language": {
+		"format": "{}",
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+		"tooltip": false
+	},
+
+
+	"clock": {
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%Y-%m-%d}"
+	},
+
+    "custom/power": {
+        "format" : "⏻ ",
+		"on-click": "~/.config/wofi/power.sh",
+		"escape": true,
+		"tooltip": false
+		}
+    }
+}

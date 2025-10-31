@@ -1,0 +1,121 @@
+* {
+	font-family: JetBrainsMono, SymbolsNerdFont;
+	font-weight: bold;
+	font-size: 13px;
+	min-height: 0;
+}
+
+@define-color bg #23252e;
+@define-color fg #fafafa;
+@define-color red #fe97a1;
+@define-color blue #78b5cc;
+@define-color pink #fc6f98;
+@define-color orange #f59c87;
+
+window#waybar {
+	color: rgba(53, 185, 171, 1);
+    background-color: rgba(53, 185, 171, 0);
+}
+
+
+#cpu {
+	margin: 0px;
+	padding: 0px 0px 0px 15px;
+	color: @blue;
+	background-color: @bg;
+	border-radius: 10 0 0 10;
+}
+
+#memory {
+	margin: 0px;
+	padding: 0px 15px 0px 0px;
+	color: @blue;
+	background-color: @bg;
+	border-radius: 0 10 10 0;
+}
+
+#custom-cmus {
+	margin: 0 15px;
+	padding: 0px 15px;
+	background-color: @bg;
+	color: @blue;
+	border-radius: 10;
+}
+
+#custom-cava {
+	margin: 0 15px;
+	padding: 0px 15px;
+	color: @fg;
+	background-color: @bg;
+	border-radius: 10;
+}
+
+#workspaces {
+    margin: 0 5px;
+    padding: 0px 15px;
+    background-color: @bg;
+	border-radius: 10;
+}
+
+#custom-scratchpad {
+    margin: 0px	5px;
+    padding: 0px 5px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: @fg;
+}
+
+#workspaces button.focused {
+    color: @red;
+}
+
+#workspaces button.visible {
+    color: rgba(115, 186, 37, 1);
+}
+
+#workspaces button.urgent {
+    color: rgba(33, 164, 223, 1);
+}
+
+#workspaces button:hover {
+	color: @orange;
+    background-color: @bg;
+}
+#workspaces button.active {
+	color: @red;
+}
+
+#tray {
+    margin: 0 15px;
+    padding: 0px 15px;
+    background-color: @bg;
+	border-radius: 10;
+}
+
+
+#language {
+	margin: 0px;
+	padding: 0px 0px 0px 15px;
+	background-color: @bg;
+	color: @red;
+	border-radius: 10 0 0 10;
+}
+
+#pulseaudio {
+	margin: 0px;
+	padding: 0px 15px 0px 0px;
+	color: @red;
+	background-color: @bg;
+	border-radius: 0 10 10 0;
+}
+
+#clock {
+	margin: 0 15px;
+	padding: 0px 15px;
+	background-color: @bg;
+	color: @orange;
+	border-radius: 10;
+}
+

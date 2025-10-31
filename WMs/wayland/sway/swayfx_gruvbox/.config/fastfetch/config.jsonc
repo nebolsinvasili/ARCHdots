@@ -1,0 +1,80 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "sixel",
+    "source": "~/.config/fastfetch/1.png",
+    "padding": {
+      "right": 3,
+      "left": 2,
+      "top": 1
+    }
+  },
+  "general": {
+    "multithreading": true
+  },
+  "display": {
+    "separator": "➜   "
+  },
+  "modules": [
+    
+    "break",
+    {
+      "type": "custom",
+      "format": "┌────────────────────────────────────────────────┐" // `\u001b` is `\033`, or `\e`
+    },
+    "break",
+    {
+      "key": "     OS           ",
+      "keyColor": "yellow",
+      "type": "os"
+    },
+    {
+      "key": "     Kernel       ",
+      "keyColor": "yellow",
+      "type": "kernel"
+    },
+    {
+      "key": "     Packages     ",
+      "keyColor": "yellow",
+      "type": "packages"
+    },
+    {
+      "type": "custom",
+      "format": " " // `\u001b` is `\033`, or `\e`
+    },
+    {
+      "key": "     WM           ",
+      "keyColor": "yellow",
+      "type": "wm"
+    },
+    {
+      "key": "     Shell        ",
+      "keyColor": "yellow",
+      "type": "shell"
+    },
+    {
+      "key": "     Terminal     ",
+      "keyColor": "yellow",
+      "type": "terminal"
+    },
+    {
+      "key": "     Font         ",
+      "keyColor": "yellow",
+      "type": "terminalfont"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "└────────────────────────────────────────────────┘" // `\u001b` is `\033`, or `\e`
+    },
+    
+    {
+      "type": "colors",
+      "paddingLeft": 34,
+      "symbol": "square",
+      "block": {
+        "width": 10
+      }
+    }
+  ]
+}

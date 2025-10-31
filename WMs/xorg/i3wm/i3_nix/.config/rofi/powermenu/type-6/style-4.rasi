@@ -1,0 +1,112 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
+
+/*****----- Configuration -----*****/
+configuration {
+    show-icons:                 false;
+}
+
+/*****----- Global Properties -----*****/
+* {
+    font:                        "JetBrains Mono Nerd Font 10";
+    background:                  #f9f9f9;
+    background-alt:              #f9f9f9;
+    foreground:                  #272a34;
+    selected:                    #272a34;
+    active:                      #272a34;
+    urgent:                      #f9f9f9;
+}
+
+/*
+USE_BUTTONS=YES
+*/
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       500px;
+    x-offset:                    697px;
+    y-offset:                    445px;
+
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    background-color:            transparent;
+    orientation:                 horizontal;
+    children:                    [ "listview" ];
+}
+
+
+/*****----- Message -----*****/
+message {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border-radius:               0px;
+    background-color:            @active;
+    text-color:                  @background;
+}
+textbox {
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     6;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     0px;
+    margin:                      10px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    padding:                     12px 0px;
+    border-radius:               5;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+element-text {
+    font:                        "feather bold 22";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    padding:                     0px;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+element selected.normal {
+    background-color:            var(selected);
+    text-color:                  var(background);
+}
